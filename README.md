@@ -1,12 +1,50 @@
 # Analog Multiplier Circuit Simulation Dataset
 
-## Overview
-This SQLite database contains labeled time-series data from simulated analog multiplier circuits with various fault conditions. The dataset is designed for AI/ML training to detect and classify circuit failures.
+## About This Dataset
 
-**Database File:** `circuit_simulations.db`  
-**Total Simulations:** 100  
-**Data Points per Simulation:** 10,000  
+This dataset was created as part of the research paper **"A Digital Twin-Enabled Lab-in-a-Pocket Cyber-Physical Ecosystem for Engineering Education with ML-Based Fault Diagnosis and Agentic AI"** by Mohamed et al. (2026). The dataset addresses a critical challenge in engineering education: enabling effective machine learning-based fault detection with minimal training data, simulating the realistic scenario of first-semester deployment where only a limited number of correct student circuit submissions are available.
+
+### Data Collection Methodology
+
+The dataset was generated through **SPICE-based circuit simulations** with controlled fault injection to create realistic analog circuit failure scenarios. Each simulation captures the time-domain behavior of an analog multiplier circuit designed to produce the relationship: `v_out = 2.0 × v_in1 × v_in2`.
+
+**Simulation Software:** SPICE (Simulation Program with Integrated Circuit Emphasis)
+**Circuit Type:** Analog Multiplier (BJT/Op-amp based topology)
+**Fault Injection:** Systematic introduction of five distinct fault conditions to model common student design errors
+**Noise Modeling:** Gaussian noise (σ=5mV) added to all signals to simulate realistic measurement conditions
+
+### Educational Context
+
+This dataset represents an **extreme educational challenge scenario** where a machine learning system must achieve reliable fault detection with only **16 correct training samples**, mimicking real-world first-semester deployment conditions before large labeled datasets accumulate. The research demonstrates that with proper feature engineering, an Autoencoder-based anomaly detection system can achieve **95.36% F1-score** even with this minimal training data, representing a **312× data efficiency improvement** over prior work.
+
+### Citation
+
+If you use this dataset in your research, please cite:
+
+```bibtex
+@misc{analogmult2026,
+  author = {Mohsen, Mohammed and Mohamed, Noor El-Deen M. and Akwah, Omar E. and Hassan, Hadeer A.},
+  title = {Analog Multiplier Circuit Simulation Dataset},
+  howpublished = {\url{https://github.com/MohammedMohsen0404/linkit}},
+  year = {2026},
+  note = {SQLite database with 100 simulations and 1,000,000 time-series data points for circuit fault detection}
+}
+```
+
+**Related Paper:** Mohamed, N.M., et al. (2026). "A Digital Twin-Enabled Lab-in-a-Pocket Cyber-Physical Ecosystem for Engineering Education with ML-Based Fault Diagnosis and Agentic AI."
+
+---
+
+## Technical Overview
+
+This SQLite database contains labeled time-series data from simulated analog multiplier circuits with various fault conditions. The dataset is designed for AI/ML training to detect and classify circuit failures in educational settings.
+
+**Database File:** `circuit_simulations.db`
+**Total Simulations:** 100
+**Data Points per Simulation:** 10,000
 **Total Records:** 1,000,000
+**Sampling Rate:** 1μs (1 MHz)
+**Simulation Duration:** 10ms per circuit
 
 ---
 
@@ -376,6 +414,3 @@ conn.close()
 ```
 
 ---
-
-**END OF DOCUMENTATION**  
-*You're welcome. Now leave me alone.*
