@@ -373,10 +373,10 @@ WHERE v_in1 IS NULL OR v_in2 IS NULL OR v_out IS NULL;
 
 ## Contact
 
-**Data Generated:** 2024  
+**Data Generated:** 2026  
 **Script Version:** 1.0  
-**Questions:** Don't contact me. Figure it out.  
-**Documentation:** This file contains everything you need.
+**Questions:** nooreldeenmagdy@h-eng.helwan.edu.eg  
+**Documentation:** You will find everything related to this dataset in the paper.
 
 ---
 
